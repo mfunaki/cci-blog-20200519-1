@@ -15,13 +15,14 @@ jobs:
       - deploy:
           name: "Publish Docker Images (master branch only)"
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then.
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
               # an else block will be added in the future for a stating release
               if git log -1 --pretty=%s | grep "\[release\]"; then
-                echo "Publishing mfunaki/go to Docker Hub production"
+                echo "Publishing mfunaki/go to Docker Hub production."
                 docker push mfunaki/go
               else
                 echo "Skipping publishing."
               fi
+            fi
