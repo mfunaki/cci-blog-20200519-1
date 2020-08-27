@@ -5,7 +5,7 @@ RUN sudo apt-get update && sudo apt-get install -y \
         llvm \
         zlib1g-dev \
         xz-utils && \
-    rm -rf /var/lib/apt/lists/*
+    sudo rm -rf /var/lib/apt/lists/*
 
 ENV GO_VERSION=1.14.1
 
