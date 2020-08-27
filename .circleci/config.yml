@@ -10,7 +10,7 @@ jobs:
       - run:
           name: "Build Docker Images"
           command: |
-            chmod +x ./build-image.sh
+            chmod +x ./build-images.sh
             ./build-images.sh
       - deploy:
           name: "Publish Docker Images (master branch only)"
