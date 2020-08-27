@@ -26,4 +26,3 @@ jobs:
                 echo "Skipping publishing."
               fi
             fi
-
