@@ -9,7 +9,9 @@ jobs:
       - setup_remote_docker
       - run:
           name: "Build Docker Images"
-          command: ./build-images.sh
+          command: |
+            chmod +x ./build-image.sh
+            ./build-images.sh
       - deploy:
           name: "Publish Docker Images (master branch only)"
           command: |
